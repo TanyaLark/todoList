@@ -91,7 +91,7 @@ const tasks = [
   }
 
   function onFormSubmitHandler(e) {
-    e.preventDefault(); //прекращает отправку формы по умолчанию
+    e.preventDefault(); 
     const titleValue = inputTitle.value;
     const bodyValue = inputBody.value;
 
