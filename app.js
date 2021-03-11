@@ -196,7 +196,7 @@ if (localStorage.getItem('objOfTasks')) {
     }
 
     objOfTasks[newTask._id] = newTask;
-    
+
     //********************************** */
     localStorage.setItem('objOfTasks', JSON.stringify(objOfTasks));
     //********************************** */
@@ -224,6 +224,11 @@ if (localStorage.getItem('objOfTasks')) {
       const id = parent.dataset.taskId;
       const confirmed = deketeTask(id);
       deleteTaskFromHTML(confirmed, parent);
+ //*********************************** */
+      delete tasksObjFromLS[`${id}`]; // удаляет свойство из обьекта 
+      localStorage.removeItem('objOfTasks'); //очищаем LS
+      localStorage.setItem('objOfTasks', JSON.stringify(objOfTasks)); //записываем заново обьект в LS
+  //*********************************** */    
     }
   }
 
