@@ -7,7 +7,6 @@ if (tasksObjFromLS !== null) {
 }
 
 (function (arrOfTasks) {
-  console.log(arrOfTasks);
   const objOfTasks = arrOfTasks.reduce((acc, task) => {
     acc[task._id] = task;
     return acc;
@@ -153,7 +152,7 @@ if (tasksObjFromLS !== null) {
 
     const task = createNewTask(titleValue, bodyValue);
     const listItem = listItemTemplate(task);
-    listContanier.insertAdjacentElement('afterbegin', listItem);
+    listContanier.insertAdjacentElement('beforeend', listItem); //'afterbegin'
     form.reset();
   }
 
